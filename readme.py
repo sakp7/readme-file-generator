@@ -1,14 +1,14 @@
 import os
 import subprocess
 import streamlit as st
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import tempfile
 from groq import Groq
 
 # Load environment variables
 load_dotenv()
 client = Groq(
-    api_key=os.environ.get("GROQ_API_KEY"),
+    api_key=st.secrets['api'],
 )
 
 def clone_repository(repo_url, clone_dir):
